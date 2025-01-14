@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .mandatory-label::after {
+      content: " *";
+      color: red;
+    }
+    body {
+      background-image: url('C:/Users/akhia/OneDrive/Pictures/WhatsApp Image 2024-08-02 at 10.55.22_77dbcba8.jpg');
+      padding-top: 30px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .card-header {
+      background-color: darkblue;
+      color: white;
+    }
+    .form-check-inline .form-check-input {
+      margin-right: 5px;
+    }
+    .form-check-inline {
+      margin-right: 10px;
+    }
+    .btn-custom {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #218838;
+      color: white;
+    }
+    .card, .card-header {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      opacity: 0.8; 
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header text-center">
+            <a id="logo" href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin" title="SCOPE INDIA - Software and Networking Professional Education Center"><img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50"></a>
+            <h2>Registration Form</h2>
+            <p>Its just a matter of 80 days to an IT job!</p>
+          </div>
+          <div class="card-body" action="save" th:"${reg}">
+            <form id="registrationForm" enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="firstname" class="mandatory-label">First Name</label>
+                  <input type="text" class="form-control" id="firstname" name="firstname" required th:field="*{firstname}">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="lastname" class="mandatory-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastname" name="lastname" required th:field="*{lastname}">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="dob" class="mandatory-label">Date Of Birth</label>
+                  <input type="date" class="form-control" id="dob" name="dob" required th:field="*{dob}">
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="mandatory-label">Gender</label><br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="gendermale" value="Male" required th:field="*{gender}">
+                    <label class="form-check-label" for="gendermale">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderfemale" value="Female" required th:field="*{gender}">
+                    <label class="form-check-label" for="genderfemale">Female</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderother" value="Other" required th:field="*{gender}">
+                    <label class="form-check-label" for="genderother">Other</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="email" class="mandatory-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required th:field="*{email}">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="phone" class="mandatory-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" required th:field="*{phone}">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="country" class="mandatory-label">Country</label>
+                  <select class="form-control" id="country" name="country" required th:field="*{country}">
+                    <option value="">Choose...</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="state" class="mandatory-label">State</label>
+                  <select class="form-control" id="state" name="state" required th:field="*{state}">
+                    <option value="">Choose...</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="city" class="mandatory-label">City</label>
+                  <select class="form-control" id="city" name="city" required th:field="*{city}">
+                    <option value="">Choose...</option>
+                    <option value="Trivandrum">Trivandrum</option>
+                    <option value="Kollam">Kollam</option>
+                    <option value="Nagercoil">Nagercoil</option>
+                    <option value="Marthadam">Marthadam</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Hobbies</label><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="hobby1" value="Reading" name="hobbies" th:field="*{hobbies}">
+                  <label class="form-check-label" for="hobby1">Reading</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="hobby2" value="Traveling" name="hobbies" th:field="*{hobbies}">
+                  <label class="form-check-label" for="hobby2">Traveling</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="hobby3" value="Sports" name="hobbies" th:field="*{hobbies}">
+                  <label class="form-check-label" for="hobby3">Sports</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="avatar" class="mandatory-label">Avatar</label>
+                <input type="file" class="form-control-file" id="avatar" name="avatar" th:field="*{avatar}">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-custom">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

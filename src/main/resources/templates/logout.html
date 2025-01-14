@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    .box-1 {
+        background-color: darkblue;
+        color: white;
+    }
+
+    body {
+        background-image: url('https://scopeindia.org/images/snowpark-skis-headerbg2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh; 
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 60px); 
+        text-align: center;
+    }
+
+    .centered-content {
+        padding: 20px;
+        border-radius: 10px;
+        color: yellow;
+        font-style: italic;
+        font-weight: 900;
+    }
+
+    h1 {
+        color: yellow;
+        font-weight: 900;
+    }
+
+    h4 {
+        color: white;
+        font-style: italic;
+    }
+  </style>
+</head>
+<body>
+    <div class="box-1">
+        <div class="container">
+            <header class="w-100 h-100 p-3" style="background-color: darkblue;">
+                <div class="row">
+                    <div class="col-1"><a th:href="@{/}">Home</a></div>
+                    <div class="col-1"><a th:href="@{/about}">About us</a></div>
+                    <div class="col-1"><a th:href="@{/contact}">Contact</a></div>
+                    <div class="col-5">
+                        <a id="logo" th:href="@{https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin}" title="SCOPE INDIA - Software and Networking Professional Education Center">
+                            <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50">
+                        </a>
+                    </div>
+                    <div class="col-1"><a th:href="@{/show}" title="Scopeindia-Registrationform">Registration</a></div>
+                    <div class="col-1"><a th:href="@{/login}">Login</a></div>
+                    <div class="col-1"><a th:href="@{/dashboard}">dash</a></div>
+                    <div class="col-1"><a th:href="@{/logout}">Logout</a></div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="centered-content">
+            <h1>SCOPE INDIA, YOUR CAREER PARTNER</h1>
+            <h4>One of the best Training Destinations for Software, Networking, and Cloud Computing courses in India with 17 years of Industrial experience.</h4>
+        </div>
+    </div>
+</body>
+</html>

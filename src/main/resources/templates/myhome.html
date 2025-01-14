@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    .box-1 {
+        background-color: #071e67;
+        color: white;
+    }
+
+   .box-2 {
+        background-image: url('https://scopeindia.org/images/slider_bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        
+
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 60px);
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .centered-content {
+        padding: 20px;
+        border-radius: 10px;
+        font-style: italic;
+        font-weight: 900;
+    }
+
+    h1 {
+        color: yellow;
+        font-weight: 900;
+    }
+
+    h4 {
+        color: white;
+        font-style: italic;
+    }
+    a {
+        color: white;
+        
+}
+a:hover {
+    color: orange;
+    text-decoration: none;
+   
+}
+
+    
+
+    @media (max-width: 768px) {
+        .centered-content {
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .content-container {
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .centered-content img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .pos{
+        margin-top: 300px;
+    }
+  </style>
+</head>
+<body>
+    <div class="container-fluid box-1">
+        <header class="w-100 p-3">
+            <div class="row text-center text-md-left">
+                <div class="col-6 col-md-1 mb-2 mb-md-0"><a th:href="@{/home}">Home</a></div>
+                <div class="col-6 col-md-1 mb-2 mb-md-0"><a th:href="@{/about}">About us</a></div>
+                <div class="col-6 col-md-2 mb-2 mb-md-0"><a th:href="@{/contact}">Contact</a></div>
+                <div class="col-12 col-md-4 mb-2 mb-md-0 text-center">
+                    <a id="logo" th:href="@{https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin}" title="SCOPE INDIA - Software and Networking Professional Education Center">
+                        <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50">
+                    </a>
+                </div>
+                <div class="col-6 col-md-1 mb-2 mb-md-0">
+                    <a th:href="@{/show}" title="Scopeindia-Registrationform">Registration</a>
+                </div>
+                <div class="col-6 col-md-1 mb-2 mb-md-0">
+                    <a th:href="@{/login}">Login</a>
+                </div>
+                <div class="col-6 col-md-1 mb-2 mb-md-0">
+                    <a th:href="@{/login}">Dashboard</a>
+                </div>
+                <div class="col-6 col-md-1">
+                    <a th:href="@{/logout}">Logout</a>
+                </div>
+            </div>
+        </header>
+        
+    </div>
+    <div class="box-2">
+
+        
+            <div class="centered-content">
+                <img class="scale-with-grid mx-auto d-block pos"  src="https://scopeindia.org/images/snowpark-footer-logo.png" alt="Snowpark Logo">
+            </div>
+        
+   
+    </div>
+</body>
+</html>

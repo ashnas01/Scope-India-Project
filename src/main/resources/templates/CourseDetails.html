@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+        }
+        h2 {
+            color: #4a90e2; /* Soft blue for header */
+        }
+        th {
+            background-color: #4a90e2; /* Blue for table header */
+            color: white;
+        }
+        td {
+            background-color: #e3f2fd; /* Light blue for table cells */
+        }
+        .btn-custom {
+            background-color: #ff6f61; /* Coral for the button */
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #e05245; /* Darker coral on hover */
+        }
+        .custom-form {
+            background-color: #fff3e0; /* Light peach for form background */
+            border: 2px solid #ffcc80; /* Soft orange border */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Course Details</h2>
+    <form th:action="@{/choose/{id}(id=${details.id})}" class="border p-4 custom-form shadow-sm rounded">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th scope="row">Course Name</th>
+                    <td th:text="${details.courseName}"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Duration</th>
+                    <td th:text="${details.duration}"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Fee</th>
+                    <td th:text="${details.fee}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Save" class="btn btn-custom mt-3">
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

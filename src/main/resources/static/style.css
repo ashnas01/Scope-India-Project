@@ -1,0 +1,36 @@
+
+.box-1 {
+    background-color: darkblue;
+    color: white;
+}
+
+body {
+    background-image: url('https://scopeindia.org/images/snowpark-skis-headerbg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    
+}
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); 
+    text-align: center;
+}
+
+.centered-content {
+    padding: 20px;
+    border-radius: 10px;
+    color: yellow;
+    font-style: italic;
+    font-weight: 900;
+}
+h1{
+    color: yellow;
+    font-weight: 900;
+}
+h4{
+    color:white;
+    font-style: italic;
+}

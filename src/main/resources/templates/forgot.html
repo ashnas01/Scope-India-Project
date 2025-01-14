@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+</head>
+<body>
+    <form th:action="@{/sendotp}" th:object="${form}">
+        <label for="email">Email:</label>
+        <input type="email" th:field="*{email}" id="email" required><br>
+        <input type="submit" value="Send OTP">
+    </form>
+</body>
+</html>

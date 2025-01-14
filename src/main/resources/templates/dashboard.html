@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Main header styling */
+        .box-1 {
+            background-color: #071e67;
+            color: white;
+            text-align: center;
+            height: 60px;
+            font-size: 40px;
+            line-height: 60px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Flex container for buttons */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        /* Individual flex item styling */
+        .flex-container > div {
+            background-color: #071e67;
+            color: white;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 35px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Flex item hover effect */
+        .flex-container > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            background-color: #218838;
+            cursor: pointer;
+        }
+
+        /* Content container for responsive design */
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        /* Table styling */
+        .table-container {
+            flex: 1;
+            max-width: 100%;
+            overflow-x: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fdfdfd;
+        }
+
+        /* Profile image styling */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+            }
+
+            .flex-container {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .table-container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .flex-container > div {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid box-1">
+        <header>Student Dashboard</header>
+    </div>
+
+    <div class="content-container">
+        <div class="flex-container">
+            <div><a th:href="@{/searchcourses}">Search for Courses</a></div>
+            <div><a th:href="@{/profileedit}">Profile Edit</a></div>
+            <div><a th:href="@{/changepassword}">Change Password</a></div>
+            <div><a th:href="@{/logout}">Log Out</a></div>
+        </div>
+
+        <div class="table-container">
+            <table th:object="${stud}">
+                <tr>
+                    <th>Profile Image</th>
+                    <td>
+                        <img th:src="@{'/images/' + ${stud.fileupload}}" alt="Profile Image" class="profile-img">
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <td th:text="${stud.firstname}"></td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td th:text="${stud.lastname}"></td>
+                </tr>
+                <tr>
+                    <th>DOB</th>
+                    <td th:text="${stud.dob}"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td th:text="${stud.email}"></td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td th:text="${stud.phone}"></td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td th:text="${count.name}"></td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td th:text="${sta.statename}"></td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td th:text="${city.cityname}"></td>
+                </tr>
+                <tr>
+                    <th>Hobbies</th>
+                    <td th:text="${stud.hobbies}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
